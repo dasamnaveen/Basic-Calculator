@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Calculator</title>
+</head>
+<body>
+    <div>
+        <h2 style="font-family: 'Times New Roman', Times, serif; color:rgb(255, 200, 0); text-align: center;"><strong>JavaScript Calculator</strong></h2>
+        <hr>
+    </div><br><br>
+    <div style="text-align: center;">
+        <p><strong>NUMBER 1 :</strong></p>
+        <input type="text" required style="width: 80px; border: solid;" id="InputBox1">
+
+        <p><strong>OPERATOR :</strong></p>
+        <select style="width: 40px; text-align: center; border: solid;" id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <p><strong>NUMBER 2 :</strong></p>
+        <input type="text" required style="width: 80px; border: solid;" id="InputBox2"><br/><br/>
+
+        <button type="submit" onclick="calculator()" style="width: 80px;">Submit</button>
+
+        <input type="number" style="width: 80px; border: solid; background-color: lightgray;" id="outputbox" readonly>
+    </div>
+    <script>
+        function calculator(){
+            const inputElement1 = document.getElementById("InputBox1");
+            const val1 = inputElement1.value;
+            const inputElement2 = document.getElementById("InputBox2");
+            const val2 = inputElement2.value;
+            const char = document.getElementById("operator");
+            const ch = char.value;
+            if(ch == '+'){
+                const sum = Number(val1)+Number(val2);
+                document.getElementById("outputbox").value = sum;
+            }
+            if(ch == '-'){
+                document.getElementById("outputbox").value = val1-val2;
+            }
+            if(ch == '*'){
+                document.getElementById("outputbox").value = val1*val2;
+            }
+            if(ch == '/'){
+                document.getElementById("outputbox").value = val1/val2;
+            }
+        }
+    </script>
+</body>
+</html>
+
